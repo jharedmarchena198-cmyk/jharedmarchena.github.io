@@ -1,0 +1,5 @@
+PORTAFOLIO JHARED MARCHENA
+
+Sube el CONTENIDO de esta carpeta (index.html, assets, casos) a tu repo:
+Add file > Upload files > Commit changes. Luego Settings > Pages > main / root.
+Datos de contacto: assets/js/main.js (arriba). CV: assets/CV_JharedMarchena.pdf
