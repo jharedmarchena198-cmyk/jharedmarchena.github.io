@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es" data-title-es="Diseño del Gestor Perhusa · Jhared Marchena" data-title-en="Designing Gestor Perhusa · Jhared Marchena">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diseño del Gestor Perhusa · Jhared Marchena</title>
+<meta name="description" content="Diseño del Gestor Perhusa. Caso de estudio de Jhared Marchena, Product Designer.">
+<meta name="theme-color" content="#141413">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Lexend+Deca:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<div class="case-page">
+  <div class="case-orb o1" aria-hidden="true"></div>
+  <div class="case-orb o2" aria-hidden="true"></div>
+  <header class="case-top">
+    <a class="back" href="../index.html#proyectos"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 18 4 12l6-6 1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"/></svg><span data-l="es">Volver</span><span data-l="en">Back</span></a>
+    <button class="lang-pill" id="lang-toggle" type="button" aria-label="Cambiar idioma / Change language"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6M5 2v2M3.3 8c.9-.9 1.9-2.4 2.3-4M4 6c.5 1.2 1.6 2.3 3 3M9 14l2.5-6L14 14M9.8 12.2h3.4"/></svg><span id="lang-label">EN</span></button>
+  </header>
+  <nav class="toc-mobile" aria-label="Secciones"><a href="#introduccion"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></a><a href="#objetivo"><span data-l="es">Objetivo</span><span data-l="en">Goal</span></a><a href="#requerimientos"><span data-l="es">Requerimientos</span><span data-l="en">Requirements</span></a><a href="#logica"><span data-l="es">Definición de lógica</span><span data-l="en">Product logic</span></a><a href="#test"><span data-l="es">Test de usabilidad</span><span data-l="en">Usability test</span></a><a href="#alta-fidelidad"><span data-l="es">Alta fidelidad</span><span data-l="en">High fidelity</span></a><a href="#conclusion"><span data-l="es">Conclusión</span><span data-l="en">Conclusion</span></a></nav>
+  <div class="case-layout">
+    <main class="case-content">
+<section id="inicio" class="stack-32">
+<h1 class="c-h1"><span data-l="es">Diseño del Gestor Perhusa: trazabilidad del café, del acopio a la exportación</span><span data-l="en">Designing Gestor Perhusa: coffee traceability, from collection to export</span></h1>
+<dl class="c-meta"><div><dt><span data-l="es">CLIENTE</span><span data-l="en">CLIENT</span></dt><dd><span data-l="es">Perhusa</span><span data-l="en">Perhusa</span></dd></div><div><dt><span data-l="es">PRODUCTO</span><span data-l="en">PRODUCT</span></dt><dd><span data-l="es">Gestor Perhusa</span><span data-l="en">Gestor Perhusa</span></dd></div><div><dt><span data-l="es">ALCANCE</span><span data-l="en">SCOPE</span></dt><dd><span data-l="es">Creación de gestor de trazabilidad</span><span data-l="en">Building a traceability manager</span></dd></div><div><dt><span data-l="es">MÉTODO</span><span data-l="en">METHOD</span></dt><dd><span data-l="es">Entrevistas, proto personas, journey map y test de usabilidad</span><span data-l="en">Interviews, proto personas, journey map and usability testing</span></dd></div></dl>
+<div class="c-cover"><img class="" src="../assets/img/casos/p-hero.jpg" alt="Ilustración del caso Perhusa" width="789" height="529"></div>
+</section>
+<section id="introduccion" class="stack">
+<div class="split">
+  <div class="stack">
+    <h2 class="c-h2"><img src="../assets/img/casos/p-identi.png" alt="Logo de Identi" width="57" height="57"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></h2>
+    <p class="c-p"><span data-l="es">Perhusa, exportadora de café peruano, necesitaba demostrar la trazabilidad de su café a certificadores y clientes internacionales, sin exponer datos sensibles como el nombre de sus distribuidores.</span><span data-l="en">Perhusa, a Peruvian coffee exporter, needed to prove the traceability of its coffee to international certifiers and clients without exposing sensitive data such as the names of its distributors.</span></p>
+    <p class="c-p"><span data-l="es">Para lograrlo, se contactaron con Identi, empresa especializada en tecnología blockchain, con el objetivo de desarrollar una solución que garantizara la seguridad, trazabilidad e integridad de la información en cada etapa del proceso.</span><span data-l="en">To do this, they reached out to Identi, a company specialized in blockchain technology, to build a solution that would guarantee the security, traceability and integrity of the information at every stage of the process.</span></p>
+  </div>
+  <img class="" src="../assets/img/casos/p-ilustra-intro.png" alt="" width="355" height="338" loading="lazy">
+</div>
+</section>
+<section class="stack">
+<h2 class="c-h2"><span data-l="es">Mi rol en el proyecto</span><span data-l="en">My role in the project</span></h2>
+<p class="c-p"><span data-l="es">Desde Identi, diseñé el Gestor Perhusa de punta a punta: requerimientos con stakeholders, discovery, lógica de producto, wireframes, testing con usuarios y handoff. Mi foco fue traducir una lógica de negocio compleja (trazabilidad blockchain por etapas) en una herramienta clara para el equipo interno.</span><span data-l="en">At Identi, I designed Gestor Perhusa end to end: requirements with stakeholders, discovery, product logic, wireframes, user testing and handoff. My focus was turning complex business logic (stage-based blockchain traceability) into a clear tool for the internal team.</span></p>
+</section>
+<section id="objetivo" class="stack">
+<div class="split split-top">
+  <div class="stack">
+    <h2 class="c-h2"><span data-l="es">Objetivo de Gestor Perhusa</span><span data-l="en">Gestor Perhusa’s goal</span></h2>
+    <p class="c-p"><span data-l="es">El objetivo del Gestor Perhusa es garantizar la trazabilidad de la información en todos los procesos que maneja la empresa, almacenarla en el gestor y generar dos tipos de certificados, uno comercial y otro para sus certificadores internacionales, encargados de verificar el cumplimiento adecuado de los procesos a nivel global.</span><span data-l="en">Gestor Perhusa’s goal is to guarantee the traceability of information across all of the company’s processes, store it in the manager and generate two types of certificates: one commercial, and one for its international certifiers, who verify that processes are properly followed worldwide.</span></p>
+    <p class="c-p"><span data-l="es">Estos certificados deben contar con tecnología blockchain para proteger la información sensible y además permitir que Perhusa controle qué datos desea mostrar.</span><span data-l="en">These certificates must use blockchain technology to protect sensitive information and let Perhusa control which data it wants to show.</span></p>
+  </div>
+  <img class="" src="../assets/img/casos/p-ilustra-objetivo.png" alt="" width="150" height="80" loading="lazy">
+</div>
+</section>
+<section class="stack-40">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">UX Roadmap</span><span data-l="en">UX Roadmap</span></h2>
+  <p class="c-p"><span data-l="es">Con esto claro, el proceso involucró las siguientes etapas:</span><span data-l="en">With this clear, the process went through the following stages:</span></p>
+</div>
+<div class="roadmap"><div class="step"><span class="flag"><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h10a1 1 0 0 1 .8 1.6L14.25 8l2.55 3.4A1 1 0 0 1 16 13H6a1 1 0 0 0-1 1v3a1 1 0 1 1-2 0V6Z" clip-rule="evenodd"/></svg></span><p class="phase"><span data-l="es">Descubrimiento y Definición</span><span data-l="en">Discovery &amp; Definition</span></p><ul><li><span data-l="es">Definición de requerimientos</span><span data-l="en">Requirements definition</span></li><li><span data-l="es">Proto personas &amp; journey maps</span><span data-l="en">Proto personas &amp; journey maps</span></li></ul></div><div class="step"><span class="flag"><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h10a1 1 0 0 1 .8 1.6L14.25 8l2.55 3.4A1 1 0 0 1 16 13H6a1 1 0 0 0-1 1v3a1 1 0 1 1-2 0V6Z" clip-rule="evenodd"/></svg></span><p class="phase"><span data-l="es">Ideación &amp; Conceptualización</span><span data-l="en">Ideation &amp; Concept</span></p><ul><li><span data-l="es">Definición de lógica de producto</span><span data-l="en">Product logic definition</span></li><li><span data-l="es">Wireframes</span><span data-l="en">Wireframes</span></li></ul></div><div class="step"><span class="flag"><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h10a1 1 0 0 1 .8 1.6L14.25 8l2.55 3.4A1 1 0 0 1 16 13H6a1 1 0 0 0-1 1v3a1 1 0 1 1-2 0V6Z" clip-rule="evenodd"/></svg></span><p class="phase"><span data-l="es">Etapa de Diseño</span><span data-l="en">Design stage</span></p><ul><li><span data-l="es">Testing de usabilidad</span><span data-l="en">Usability testing</span></li><li><span data-l="es">Prototipo de alta fidelidad</span><span data-l="en">High-fidelity prototype</span></li></ul></div><div class="step"><span class="flag"><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h10a1 1 0 0 1 .8 1.6L14.25 8l2.55 3.4A1 1 0 0 1 16 13H6a1 1 0 0 0-1 1v3a1 1 0 1 1-2 0V6Z" clip-rule="evenodd"/></svg></span><p class="phase"><span data-l="es">Desarrollo &amp; Validación</span><span data-l="en">Development &amp; Validation</span></p><ul><li><span data-l="es">Handoff</span><span data-l="en">Handoff</span></li></ul></div></div>
+</section>
+<section id="requerimientos" class="stack">
+<h2 class="c-h2"><span data-l="es">Definición de requerimientos</span><span data-l="en">Requirements definition</span></h2>
+<p class="c-p"><span data-l="es">Para definir requerimientos partimos con reuniones con stakeholders de Perhusa para identificar todas las necesidades de sus certificadores internacionales y clientes, además de las funcionalidades clave a integrar en el gestor.</span><span data-l="en">To define requirements, we started with meetings with Perhusa’s stakeholders to identify all the needs of their international certifiers and clients, as well as the key features to build into the manager.</span></p>
+<div class="grid-2" style="grid-template-columns:491fr 438fr">
+  <img class="full-img r4" src="../assets/img/casos/p-req1.jpg" alt="Reunión de requerimientos con stakeholders" width="491" height="274" loading="lazy">
+  <img class="full-img r4" src="../assets/img/casos/p-req2.jpg" alt="Reunión de requerimientos con stakeholders" width="438" height="274" loading="lazy">
+</div>
+</section>
+<section class="stack">
+<h2 class="c-h2"><img src="../assets/img/casos/p-clipboard.png" alt="" width="56" height="56"><span data-l="es">Necesidades</span><span data-l="en">Needs</span></h2>
+<p class="c-p"><span data-l="es">A partir de las reuniones con stakeholders, identificamos las siguientes necesidades principales:</span><span data-l="en">From the stakeholder meetings, we identified these main needs:</span></p>
+<ul class="c-list"><li><span data-l="es">Personalizar la información que desean compartir con certificadores internacionales y clientes.</span><span data-l="en">Customize the information they want to share with international certifiers and clients.</span></li><li><span data-l="es">Subir datos sobre las distintas etapas del café, desde su origen hasta la exportación.</span><span data-l="en">Upload data about each stage of the coffee, from origin to export.</span></li><li><span data-l="es">Registrar información de sus productores de café.</span><span data-l="en">Register information about their coffee producers.</span></li><li><span data-l="es">Registrar datos sobre las parcelas (campos) de los productores.</span><span data-l="en">Register data about the producers’ plots (fields).</span></li><li><span data-l="es">Generar certificados con tecnología blockchain, con un diseño atractivo y que muestre la información seleccionada.</span><span data-l="en">Generate blockchain certificates with an attractive design that shows the selected information.</span></li></ul>
+</section>
+<section id="discovery" class="stack-32">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">Discovery</span><span data-l="en">Discovery</span></h2>
+  <p class="c-p"><span data-l="es">El proceso de descubrimiento incluyó dos etapas fundamentales para mapear necesidades y posibles soluciones, tanto desde la perspectiva del usuario como del producto.</span><span data-l="en">Discovery included two key stages to map needs and possible solutions, from both the user’s and the product’s perspective.</span></p>
+</div>
+<div class="stack-32">
+  <div class="box pad36">
+    <div class="stack-8"><h3 class="c-h4"><span data-l="es">Proto usuario</span><span data-l="en">Proto user</span></h3><p class="c-p"><span data-l="es">Nos permitió empatizar con los usuarios y entender mejor sus necesidades.</span><span data-l="en">It helped us empathize with users and better understand their needs.</span></p></div>
+    <img class="full-img r4" src="../assets/img/casos/p-persona.jpg" alt="Proto persona: Edgar de la Torre" width="888" height="320" loading="lazy">
+  </div>
+  <div class="box pad36">
+    <div class="stack-8"><h3 class="c-h4"><span data-l="es">Journey map</span><span data-l="en">Journey map</span></h3><p class="c-p"><span data-l="es">Permitió mapear posibles problemas y generar soluciones iniciales en conjunto como equipo.</span><span data-l="en">It let us map potential problems and come up with first solutions together as a team.</span></p></div>
+    <img class="full-img r8" src="../assets/img/casos/p-journey.jpg" alt="Journey map del gestor" width="888" height="318" loading="lazy">
+  </div>
+</div>
+</section>
+<section id="logica" class="stack">
+<div class="split split-top">
+  <div class="stack">
+    <h2 class="c-h2"><span data-l="es">Definición de lógica de producto</span><span data-l="en">Product logic definition</span></h2>
+    <p class="c-p"><span data-l="es">Tras recopilar información en reuniones y comprender las necesidades de Perhusa, utilizamos la documentación proporcionada para definir el método de carga de datos, optando por una carga masiva por etapas. A partir de esto, identificamos las distintas fases en las que se registra información, permitiendo estructurar el proceso de una orden de venta, desde la entrada al centro de acopio hasta el despacho y embarque.</span><span data-l="en">After gathering information in meetings and understanding Perhusa’s needs, we used the documentation they shared to define the data upload method, choosing stage-based bulk upload. From there, we identified the phases where information is recorded, which let us structure a sales order from arrival at the collection center to dispatch and shipping.</span></p>
+    <p class="c-p"><span data-l="es">Gracias a este enfoque, logramos dividir el proceso en cinco etapas:</span><span data-l="en">With this approach, we split the process into five stages:</span></p>
+    <ul class="c-list"><li><span data-l="es">Entrada de centro de acopio</span><span data-l="en">Collection center intake</span></li><li><span data-l="es">Salida de centro de acopio</span><span data-l="en">Collection center output</span></li><li><span data-l="es">Recepción en planta</span><span data-l="en">Plant reception</span></li><li><span data-l="es">Procesamiento</span><span data-l="en">Processing</span></li><li><span data-l="es">Despacho y embarque de producto</span><span data-l="en">Product dispatch and shipping</span></li></ul>
+  </div>
+  <figure class="stack-16" style="flex:0 0 332px;max-width:100%">
+    <img class="full-img r8" src="../assets/img/casos/p-flujo.jpg" alt="Flujograma de trazabilidad del café" width="332" height="501" loading="lazy">
+    <figcaption class="caption"><p class="c-p"><span data-l="es">Flujograma de trazabilidad del café</span><span data-l="en">Coffee traceability flowchart</span></p><p class="c-p c-muted"><span data-l="es">Documentación de Perhusa</span><span data-l="en">Perhusa documentation</span></p></figcaption>
+  </figure>
+</div>
+</section>
+<section id="wireframes" class="stack-32">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">Wireframes</span><span data-l="en">Wireframes</span></h2>
+  <p class="c-p"><span data-l="es">Las primeras pantallas tenían como objetivo validar conceptos con los clientes y asegurar que la lógica y los datos incorporados fueran coherentes y correctos. Las reuniones fueron muy fructíferas durante este proceso, ya que nos dieron un amplio feedback que nos permitió corregir errores y mejorar continuamente.</span><span data-l="en">The first screens aimed to validate concepts with the client and make sure the logic and data were coherent and correct. The meetings were very productive, giving us plenty of feedback to fix mistakes and keep improving.</span></p>
+</div>
+<div class="grid-2 g32" style="grid-template-columns:587fr 334fr;align-items:start">
+  <img class="full-img r4" src="../assets/img/casos/p-wire1.jpg" alt="Wireframe: registro de lotes" width="587" height="456" loading="lazy">
+  <img class="full-img r4" src="../assets/img/casos/p-wire2.jpg" alt="Wireframe: certificado" width="334" height="456" loading="lazy">
+</div>
+</section>
+<section id="test" class="stack-40">
+<div class="split split-56">
+  <div class="stack">
+    <h2 class="c-h2"><span data-l="es">Testing de usabilidad</span><span data-l="en">Usability testing</span></h2>
+    <p class="c-p"><span data-l="es">Hicimos un test moderado por Meet con 5 trabajadores de Perhusa, usando el prototipo en Maze. Durante este proceso, se formularon preguntas sobre los flujos en cada sección del gestor.</span><span data-l="en">We ran a moderated test over Meet with 5 Perhusa employees using the prototype in Maze, asking questions about the flows in each section of the manager.</span></p>
+  </div>
+  <img class="" src="../assets/img/casos/p-ilustra-test.png" alt="" width="314" height="231" loading="lazy">
+</div>
+<div class="stack-16">
+  <h2 class="c-h2"><span data-l="es">Resultados</span><span data-l="en">Results</span></h2>
+  <p class="c-p"><span data-l="es">Tras analizar las métricas, identificamos los puntos más relevantes, lo que nos permitió determinar áreas de mejora y verificar si cumplimos con los objetivos esperados.</span><span data-l="en">After analyzing the metrics, we identified the most relevant points, which helped us define areas for improvement and check whether we met the expected goals.</span></p>
+</div>
+<div class="callout"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b6e9ff" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg><p class="c-p"><span data-l="es">Testeamos a 5 trabajadores de Perhusa, quienes serán los encargados de utilizar el gestor.</span><span data-l="en">We tested with 5 Perhusa employees, who will be the ones using the manager.</span></p></div>
+<div class="grid-2"><div class="box g8 pad32"><img src="../assets/img/casos/p-pin.png" alt="" width="22" height="22"><p class="c-p"><span data-l="es">60% de los usuarios entendieron la sección de búsqueda de ventas.</span><span data-l="en">60% of users understood the sales search section.</span></p></div><div class="box g8 pad32"><img src="../assets/img/casos/p-pin.png" alt="" width="22" height="22"><p class="c-p"><span data-l="es">80% de los usuarios entendieron cómo subir información de forma masiva.</span><span data-l="en">80% of users understood how to upload information in bulk.</span></p></div><div class="box g8 pad32"><img src="../assets/img/casos/p-pin.png" alt="" width="22" height="22"><p class="c-p"><span data-l="es">40% de los usuarios comprendieron cómo completar la información en la sección “Parcelas”.</span><span data-l="en">40% of users understood how to fill in the “Plots” section.</span></p></div><div class="box g8 pad32"><img src="../assets/img/casos/p-pin.png" alt="" width="22" height="22"><p class="c-p"><span data-l="es">100% de los usuarios comprendieron cómo generar un certificado y configurar la plantilla para mostrar la información deseada.</span><span data-l="en">100% of users understood how to generate a certificate and set up the template to show the information they wanted.</span></p></div></div>
+<p class="c-p"><span data-l="es">El hallazgo más crítico fue el 40% en la sección Parcelas. Ese resultado derivó directamente en una iteración: incorporamos el lenguaje y términos que el equipo de Perhusa usa en su operación diaria, y simplificamos la estructura de entrada de datos para reducir la fricción en esa tarea específica.</span><span data-l="en">The most critical finding was the 40% in the Plots section. That result led directly to an iteration: we brought in the language and terms Perhusa’s team uses in daily operations, and simplified the data entry structure to reduce friction in that specific task.</span></p>
+</section>
+<section id="alta-fidelidad" class="stack-40">
+<div class="split split-56">
+  <div class="stack">
+    <h2 class="c-h2"><span data-l="es">Prototipo de alta fidelidad</span><span data-l="en">High-fidelity prototype</span></h2>
+    <p class="c-p"><span data-l="es">Tras los resultados del testing, iteramos el prototipo incorporando las recomendaciones de los trabajadores de Perhusa, incluyendo el lenguaje y términos que utilizan en su día a día. Esto nos permitió presentar un prototipo de alta fidelidad alineado con sus necesidades y contexto.</span><span data-l="en">After the testing results, we iterated on the prototype with the recommendations from Perhusa’s employees, including the language and terms they use every day. This let us present a high-fidelity prototype aligned with their needs and context.</span></p>
+  </div>
+  <img class="" src="../assets/img/casos/p-ilustra-proto.png" alt="" width="266" height="250" loading="lazy">
+</div>
+<div class="stack-32">
+  <img class="full-img r8" src="../assets/img/casos/p-proto1.jpg" alt="Prototipo: registro de venta" width="764" height="424" loading="lazy">
+  <img class="full-img r8" src="../assets/img/casos/p-proto2.jpg" alt="Prototipo: información general de parcelas cargadas" width="764" height="424" loading="lazy">
+</div>
+</section>
+<section id="handoff" class="stack">
+<h2 class="c-h2"><span data-l="es">Handoff: más que una entrega de prototipo</span><span data-l="en">Handoff: more than delivering a prototype</span></h2>
+<p class="c-p"><span data-l="es">Cuando el prototipo de alta fidelidad estuvo listo, empezó el handoff. Para mí esta etapa no es el cierre del diseño, es una transición que hay que acompañar hasta que el producto esté implementado.</span><span data-l="en">Once the high-fidelity prototype was ready, handoff began. For me, this stage isn’t the end of design. It’s a transition that needs support until the product is built.</span></p>
+<p class="c-p"><span data-l="es">Hicimos sesiones de socialización con el equipo de desarrollo para que pudieran estimar tiempos de implementación y entender la lógica del producto antes de escribir código.</span><span data-l="en">We held walkthrough sessions with the development team so they could estimate implementation time and understand the product logic before writing code.</span></p>
+<div class="split split-top">
+  <div class="stack-8">
+    <p class="c-p"><span data-l="es">Cómo lo trabajé:</span><span data-l="en">How I approached it:</span></p>
+    <ul class="c-list"><li><span data-l="es">Prototipo con flujo visual: para que el equipo entendiera el producto completo, no pantallas sueltas.</span><span data-l="en">Prototype with a visual flow: so the team understood the whole product, not isolated screens.</span></li><li><span data-l="es">Especificaciones técnicas: tamaños, espaciados, interacciones y componentes reutilizables documentados.</span><span data-l="en">Technical specs: sizes, spacing, interactions and reusable components documented.</span></li><li><span data-l="es">Reuniones de alineación: para resolver dudas, explicar decisiones de diseño y recibir feedback técnico.</span><span data-l="en">Alignment meetings: to answer questions, explain design decisions and get technical feedback.</span></li><li><span data-l="es">Seguimiento y QA: revisamos la implementación, detectamos inconsistencias y las ajustamos antes de salir.</span><span data-l="en">Follow-up and QA: we reviewed the build, caught inconsistencies and fixed them before launch.</span></li></ul>
+  </div>
+  <img class="" src="../assets/img/casos/p-ilustra-handoff.png" alt="" width="250" height="243" loading="lazy">
+</div>
+</section>
+<section id="conclusion" class="stack">
+<h2 class="c-h2"><span data-l="es">Conclusión</span><span data-l="en">Conclusion</span></h2>
+<p class="c-p"><span data-l="es">El proyecto abarcó desde la investigación inicial hasta el acompañamiento en desarrollo, lo que permitió entregar un gestor funcional alineado con la lógica real del negocio.</span><span data-l="en">The project covered everything from initial research to supporting development, which made it possible to deliver a working manager aligned with the real business logic.</span></p>
+<p class="c-p"><span data-l="es">El mayor aprendizaje fue que en productos con lógica compleja, como la trazabilidad por etapas, el diseño no puede separarse del entendimiento profundo del proceso. Cada pantalla dependía de decisiones de negocio que había que comprender antes de proponer.</span><span data-l="en">The biggest lesson was that in products with complex logic, like stage-based traceability, design can’t be separated from a deep understanding of the process. Every screen depended on business decisions that had to be understood before proposing anything.</span></p>
+<p class="c-p"><span data-l="es">El proceso de handoff también reforzó algo importante: entregar un prototipo no es el final. Es el inicio de una nueva etapa que requiere acompañamiento, sesiones de alineación y seguimiento en implementación para que la experiencia diseñada llegue intacta al producto final.</span><span data-l="en">Handoff also reinforced something important: delivering a prototype isn’t the end. It’s the start of a new stage that needs support, alignment sessions and implementation follow-up so the designed experience reaches the final product intact.</span></p>
+<p class="c-p"><span data-l="es">Agradezco al equipo de desarrollo y a la Product Manager del proyecto por su liderazgo y apoyo en la comprensión de cada aspecto clave de la lógica del producto.</span><span data-l="en">Thanks to the development team and the project’s Product Manager for their leadership and support in understanding every key part of the product logic.</span></p>
+</section>
+
+      <footer class="next-case">
+        <a href="../index.html#proyectos"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 18 4 12l6-6 1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"/></svg><span data-l="es">Todos los proyectos</span><span data-l="en">All projects</span></a>
+        <a class="nx" href="utp-class.html"><small><span data-l="es">SIGUIENTE CASO</span><span data-l="en">NEXT CASE</span></small><span><span data-l="es">Mejora del drag and drop en UTP+Class</span><span data-l="en">Improving drag and drop in UTP+Class</span> <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M13.4793 10.8333H3.3335V9.16666H13.4793L8.81266 4.49999L10.0002 3.33333L16.6668 9.99999L10.0002 16.6667L8.81266 15.5L13.4793 10.8333Z"/></svg></span></a>
+      </footer>
+    </main>
+    <aside class="toc" aria-label="Saltar a la sección">
+      <p class="toc-label"><span data-l="es">Saltar a la sección</span><span data-l="en">Jump to section</span></p>
+      <ol><li><a href="#introduccion"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></a></li><li><a href="#objetivo"><span data-l="es">Objetivo</span><span data-l="en">Goal</span></a></li><li><a href="#requerimientos"><span data-l="es">Requerimientos</span><span data-l="en">Requirements</span></a></li><li><a href="#logica"><span data-l="es">Definición de lógica</span><span data-l="en">Product logic</span></a></li><li><a href="#test"><span data-l="es">Test de usabilidad</span><span data-l="en">Usability test</span></a></li><li><a href="#alta-fidelidad"><span data-l="es">Alta fidelidad</span><span data-l="en">High fidelity</span></a></li><li><a href="#conclusion"><span data-l="es">Conclusión</span><span data-l="en">Conclusion</span></a></li></ol>
+    </aside>
+  </div>
+</div>
+<script src="../assets/js/case.js"></script>
+</body>
+</html>

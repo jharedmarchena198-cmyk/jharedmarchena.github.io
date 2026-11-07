@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es" data-title-es="Mejora del drag and drop en UTP+Class · Jhared Marchena" data-title-en="Improving drag and drop in UTP+Class · Jhared Marchena">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mejora del drag and drop en UTP+Class · Jhared Marchena</title>
+<meta name="description" content="Mejora del drag and drop en UTP+Class. Caso de estudio de Jhared Marchena, Product Designer.">
+<meta name="theme-color" content="#141413">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Lexend+Deca:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<div class="case-page">
+  <div class="case-orb o1" aria-hidden="true"></div>
+  <div class="case-orb o2" aria-hidden="true"></div>
+  <header class="case-top">
+    <a class="back" href="../index.html#proyectos"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 18 4 12l6-6 1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"/></svg><span data-l="es">Volver</span><span data-l="en">Back</span></a>
+    <button class="lang-pill" id="lang-toggle" type="button" aria-label="Cambiar idioma / Change language"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6M5 2v2M3.3 8c.9-.9 1.9-2.4 2.3-4M4 6c.5 1.2 1.6 2.3 3 3M9 14l2.5-6L14 14M9.8 12.2h3.4"/></svg><span id="lang-label">EN</span></button>
+  </header>
+  <nav class="toc-mobile" aria-label="Secciones"><a href="#introduccion"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></a><a href="#problema"><span data-l="es">El problema</span><span data-l="en">The problem</span></a><a href="#objetivos"><span data-l="es">Objetivos</span><span data-l="en">Goals</span></a><a href="#investigacion"><span data-l="es">Investigación</span><span data-l="en">Research</span></a><a href="#propuestas"><span data-l="es">Propuestas</span><span data-l="en">Proposals</span></a><a href="#test-ab"><span data-l="es">Test A/B</span><span data-l="en">A/B test</span></a><a href="#resultados"><span data-l="es">Resultados</span><span data-l="en">Results</span></a><a href="#decision"><span data-l="es">Decisión</span><span data-l="en">Decision</span></a><a href="#aprendizajes"><span data-l="es">Aprendizajes</span><span data-l="en">Learnings</span></a></nav>
+  <div class="case-layout">
+    <main class="case-content">
+<section id="inicio" class="stack-32">
+<h1 class="c-h1"><span data-l="es">Mejora del drag and drop en UTP+Class: validar la tarea antes de entregarla</span><span data-l="en">Improving drag and drop in UTP+Class: checking the assignment before submitting it</span></h1>
+<dl class="c-meta"><div><dt><span data-l="es">CLIENTE</span><span data-l="en">CLIENT</span></dt><dd><span data-l="es">Universidad Tecnológica del Perú</span><span data-l="en">Universidad Tecnológica del Perú</span></dd></div><div><dt><span data-l="es">PRODUCTO</span><span data-l="en">PRODUCT</span></dt><dd><span data-l="es">UTP+Class</span><span data-l="en">UTP+Class</span></dd></div><div><dt><span data-l="es">ALCANCE</span><span data-l="en">SCOPE</span></dt><dd><span data-l="es">Drag and drop en la entrega de tareas</span><span data-l="en">Drag and drop in assignment submission</span></dd></div><div><dt><span data-l="es">MÉTODO</span><span data-l="en">METHOD</span></dt><dd><span data-l="es">Encuesta, heurística, benchmarking, test A/B y guerrilla</span><span data-l="en">Survey, heuristics, benchmarking, A/B test and guerrilla testing</span></dd></div></dl>
+<div class="c-cover"><img class="" src="../assets/img/casos/u-hero.jpg" alt="Ilustración del caso UTP+Class" width="789" height="529"></div>
+</section>
+<section id="introduccion" class="stack">
+<div class="split">
+  <div class="stack">
+    <h2 class="c-h2"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></h2>
+    <p class="c-p"><span data-l="es">UTP+Class es la plataforma educativa de la Universidad Tecnológica del Perú. Entregar tareas es lo que más hacen los estudiantes en ella: más del 87% la usa para eso, en todas las modalidades (presencial, remota y virtual).</span><span data-l="en">UTP+Class is the learning platform of Universidad Tecnológica del Perú. Submitting assignments is what students do most on it: over 87% use it for that, across all formats (on-site, remote and online).</span></p>
+    <p class="c-p"><span data-l="es">El problema era simple pero frecuente: al subir un archivo, el estudiante no tenía forma de confirmar que era el correcto antes de enviarlo. Si se equivocaba, lo descubría tarde.</span><span data-l="en">The problem was simple but frequent: when uploading a file, students had no way to confirm it was the right one before sending it. If they got it wrong, they found out too late.</span></p>
+  </div>
+  <img class="logo-box" src="../assets/img/casos/u-logo.jpg" alt="Logo de UTP+Class" width="274" height="274" loading="lazy">
+</div>
+</section>
+<section class="stack">
+<h2 class="c-h2"><span data-l="es">Mi rol en el proyecto</span><span data-l="en">My role in the project</span></h2>
+<p class="c-p"><span data-l="es">Diseñé este proyecto como UX Designer, a partir de los datos de la encuesta de satisfacción que me compartieron. Me encargué del análisis de la problemática, la evaluación heurística del componente, el benchmarking, el diseño de dos propuestas para un test A/B y su validación con estudiantes mediante Maze y test de guerrilla en sede de la universidad.</span><span data-l="en">I designed this project as a UX Designer, based on satisfaction survey data shared with me. I handled the problem analysis, the heuristic evaluation of the component, benchmarking, the design of two proposals for an A/B test, and their validation with students through Maze and guerrilla testing on campus.</span></p>
+</section>
+<section id="problema" class="stack-40">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">El problema</span><span data-l="en">The problem</span></h2>
+  <p class="c-p"><span data-l="es">En la encuesta de satisfacción aplicada a 59,612 estudiantes matriculados en marzo, el 42.5% reportó fricción por no poder previsualizar el archivo antes de entregarlo. Fue la principal oportunidad de mejora dentro del flujo de entrega de tareas.</span><span data-l="en">In the satisfaction survey of 59,612 students enrolled in March, 42.5% reported friction from not being able to preview the file before submitting it. It was the main improvement opportunity in the submission flow.</span></p>
+  <div class="grid-2">
+    <div class="box pad32"><span class="big-num">42.5%</span><p class="c-p"><span data-l="es">de 59,612 estudiantes reportó fricción por no poder previsualizar su archivo.</span><span data-l="en">of 59,612 students reported friction from not being able to preview their file.</span></p></div>
+    <div class="box pad32"><span class="big-num">+87%</span><p class="c-p"><span data-l="es">de los estudiantes usa UTP+Class para entregar tareas, en todas las modalidades.</span><span data-l="en">of students use UTP+Class to submit assignments, across all formats.</span></p></div>
+  </div>
+  <p class="c-p"><span data-l="es">No es solo un tema de interfaz: afecta la confianza del estudiante en un momento sensible, cuando entrega algo que se va a calificar.</span><span data-l="en">It’s not just an interface issue: it affects students’ confidence at a sensitive moment, when they’re submitting something that will be graded.</span></p>
+</div>
+<div class="stack">
+  <img class="full-img" src="../assets/img/casos/u-componente.jpg" alt="Componente drag and drop actual de UTP+Class" width="960" height="475" loading="lazy">
+  <p class="c-p"><span data-l="es">Componente actual: el estudiante solo ve el nombre del archivo, sin forma de revisar su contenido.</span><span data-l="en">Current component: students only see the file name, with no way to check its content.</span></p>
+</div>
+</section>
+<section id="objetivos" class="stack-40">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">A qué apuntamos</span><span data-l="en">What we aimed for</span></h2>
+  <p class="c-p"><span data-l="es">Evaluar qué forma de validar el archivo genera más claridad, control y confianza antes de entregar. En concreto, queríamos saber si el estudiante:</span><span data-l="en">Evaluate which way of checking the file creates more clarity, control and confidence before submitting. Specifically, we wanted to know whether the student:</span></p>
+</div>
+<div class="stack-32">
+  <div class="grid-3"><div class="box pad32"><span class="c-h4 accent">01</span><p class="c-p"><span data-l="es">Entiende de forma inmediata que su archivo se cargó correctamente.</span><span data-l="en">Immediately understands that their file uploaded correctly.</span></p></div><div class="box pad32"><span class="c-h4 accent">02</span><p class="c-p"><span data-l="es">Puede verificar que el archivo cargado es el correcto.</span><span data-l="en">Can verify that the uploaded file is the right one.</span></p></div><div class="box pad32"><span class="c-h4 accent">03</span><p class="c-p"><span data-l="es">Se siente más seguro al momento de entregar.</span><span data-l="en">Feels more confident when submitting.</span></p></div></div>
+  <div class="callout accent">
+    <div class="stack-8"><h3 class="c-h4 accent"><span data-l="es">Hipótesis</span><span data-l="en">Hypothesis</span></h3><p class="c-p"><span data-l="es">Si el sistema ofrece una validación clara e inmediata del archivo antes del envío, el estudiante entregará con más seguridad.</span><span data-l="en">If the system offers clear, immediate validation of the file before sending, students will submit with more confidence.</span></p></div>
+    <img class="" src="../assets/img/casos/u-puzzle.png" alt="" width="128" height="118" loading="lazy">
+  </div>
+  <div class="callout plain">
+    <img class="" src="../assets/img/casos/u-gauge.png" alt="" width="122" height="122" loading="lazy">
+    <div class="stack-8"><h3 class="c-h4 accent"><span data-l="es">Meta</span><span data-l="en">Target</span></h3><p class="c-p"><span data-l="es">Reducir en 30% relativo la fricción reportada (de 42.5% a ~30%). Asumimos que la solución ataca directamente la causa, pero que no todos los estudiantes descubrirían la previsualización por su cuenta. Se valida en la próxima encuesta de satisfacción.</span><span data-l="en">Cut reported friction by 30% relative (from 42.5% to ~30%). We assumed the solution tackles the cause directly, but not every student would discover the preview on their own. It will be validated in the next satisfaction survey.</span></p></div>
+  </div>
+</div>
+</section>
+<section id="investigacion" class="stack">
+<h2 class="c-h2"><span data-l="es">Investigación</span><span data-l="en">Research</span></h2>
+<div class="grid-2 g16">
+  <div class="box g32"><div class="stack-8"><h3 class="mc-title"><span data-l="es">Evaluación heurística</span><span data-l="en">Heuristic evaluation</span></h3><p class="c-p"><span data-l="es">Revisamos el componente drag and drop actual para ubicar los puntos de fricción específicos en la interfaz.</span><span data-l="en">We reviewed the current drag and drop component to pinpoint specific friction points in the interface.</span></p></div><img class="full-img r8" src="../assets/img/casos/u-heuristica.jpg" alt="Evaluación heurística del componente" width="407" height="258" loading="lazy"></div>
+  <div class="box g32"><div class="stack-8"><h3 class="mc-title"><span data-l="es">Benchmarking referencial</span><span data-l="en">Reference benchmarking</span></h3><p class="c-p"><span data-l="es">Analizamos cómo otras plataformas resuelven la carga y validación de documentos.</span><span data-l="en">We looked at how other platforms handle uploading and checking documents.</span></p></div><img class="full-img r8" src="../assets/img/casos/u-benchmark.jpg" alt="Benchmarking de otras plataformas" width="406" height="258" loading="lazy"></div>
+</div>
+</section>
+<section id="propuestas" class="stack-32">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">Dos formas de validar el archivo</span><span data-l="en">Two ways to check the file</span></h2>
+  <p class="c-p"><span data-l="es">A partir de la heurística y el benchmarking diseñamos dos propuestas. Ambas comparten un cambio base: el archivo cargado cambia de fondo para confirmar visualmente que la carga fue exitosa.</span><span data-l="en">Based on the heuristics and benchmarking, we designed two proposals. Both share a base change: the uploaded file changes background to visually confirm the upload worked.</span></p>
+</div>
+<div class="grid-2 g32">
+  <article class="media-card alt"><div class="mc-media white contain"><img class="" src="../assets/img/casos/u-propA.jpg" alt="Propuesta A: ícono de ojo para previsualizar" width="462" height="260" loading="lazy"></div><div class="mc-body"><p class="tag"><span data-l="es">Propuesta A</span><span data-l="en">Proposal A</span></p><h3 class="mc-title"><span data-l="es">Previsualizar sin salir del flujo</span><span data-l="en">Preview without leaving the flow</span></h3><p class="c-p"><span data-l="es">Un ícono de ojo abre el archivo en el visor integrado (PDFtron), dentro de la misma pantalla.</span><span data-l="en">An eye icon opens the file in the built-in viewer (PDFtron), on the same screen.</span></p></div></article>
+  <article class="media-card dark"><div class="mc-media white contain"><img class="" src="../assets/img/casos/u-propB.jpg" alt="Propuesta B: nombre del archivo como link de descarga" width="462" height="260" loading="lazy"></div><div class="mc-body"><p class="tag"><span data-l="es">Propuesta B</span><span data-l="en">Proposal B</span></p><h3 class="mc-title"><span data-l="es">Validar descargando</span><span data-l="en">Check by downloading</span></h3><p class="c-p"><span data-l="es">El nombre del archivo funciona como link de descarga. El estudiante sale del flujo para revisarlo.</span><span data-l="en">The file name works as a download link. Students leave the flow to check it.</span></p></div></article>
+</div>
+</section>
+<section id="test-ab" class="stack">
+<h2 class="c-h2"><span data-l="es">Test A/B</span><span data-l="en">A/B test</span></h2>
+<p class="c-p"><span data-l="es">Armamos un Maze por propuesta con tres misiones y luego medimos percepción con escala Likert del 1 al 5. Invitamos por correo a 4,000 estudiantes del ciclo de verano que hubieran subido al menos una tarea. La tasa de respuesta fue baja, así que fuimos a una sede de la UTP a hacer test de guerrilla hasta completar la muestra.</span><span data-l="en">We built one Maze per proposal with three missions, then measured perception on a 1 to 5 Likert scale. We emailed 4,000 summer-term students who had uploaded at least one assignment. The response rate was low, so we went to a UTP campus to run guerrilla tests until we completed the sample.</span></p>
+<div class="grid-3 g16"><div class="box g8"><span class="mc-title" style="color:var(--accent)"><span data-l="es">Misión 01</span><span data-l="en">Mission 01</span></span><p class="c-p"><span data-l="es">Adjuntar un archivo (desktop)</span><span data-l="en">Attach a file (desktop)</span></p></div><div class="box g8"><span class="mc-title" style="color:var(--accent)"><span data-l="es">Misión 02</span><span data-l="en">Mission 02</span></span><p class="c-p"><span data-l="es">Validar el archivo subido (desktop)</span><span data-l="en">Check the uploaded file (desktop)</span></p></div><div class="box g8"><span class="mc-title" style="color:var(--accent)"><span data-l="es">Misión 03</span><span data-l="en">Mission 03</span></span><p class="c-p"><span data-l="es">Validar el archivo (mobile)</span><span data-l="en">Check the file (mobile)</span></p></div></div>
+<div class="callout"><img class="" src="../assets/img/casos/u-nota.png" alt="" width="76" height="80" loading="lazy"><p class="c-p"><span data-l="es">20 respuestas en la propuesta A y 19 en la B. El test presencial además nos dejó ver reacciones, resolver dudas en el momento y escuchar comentarios que no escribirían en un formulario.</span><span data-l="en">20 responses for proposal A and 19 for B. Testing in person also let us see reactions, answer questions on the spot and hear comments people wouldn’t write in a form.</span></p></div>
+</section>
+<section id="resultados" class="stack-40">
+<h2 class="c-h2"><span data-l="es">Resultados</span><span data-l="en">Results</span></h2>
+<div class="box g8"><span class="big-num xl">62.5%</span><p class="c-p"><span data-l="es">de las menciones a la pregunta “¿Qué mejorarías para sentirte seguro antes de entregar?” pidió poder ver o revisar el archivo antes de enviarlo (25 de 40). La necesidad se confirmó.</span><span data-l="en">of mentions to the question “What would you improve to feel confident before submitting?” asked to be able to see or check the file before sending it (25 of 40). The need was confirmed.</span></p></div>
+<div class="stack-8"><h3 class="mc-title"><span data-l="es">Éxito por misión</span><span data-l="en">Success by mission</span></h3><p class="c-p"><span data-l="es">Porcentaje de estudiantes que completó cada misión.</span><span data-l="en">Percentage of students who completed each mission.</span></p></div>
+<div class="c-table-wrap"><table class="c-table">
+  <thead><tr><th scope="col"><span class="sr"></span></th><th scope="col"><span data-l="es">Adjuntar (desktop)</span><span data-l="en">Attach (desktop)</span></th><th scope="col"><span data-l="es">Validar (desktop)</span><span data-l="en">Check (desktop)</span></th><th scope="col"><span data-l="es">Validar (mobile)</span><span data-l="en">Check (mobile)</span></th></tr></thead>
+  <tbody>
+    <tr><th scope="row" style="font-weight:300"><span data-l="es">Propuesta A (n=20)</span><span data-l="en">Proposal A (n=20)</span></th><td class="hi">100%</td><td class="hi">100%</td><td class="hi">95%</td></tr>
+    <tr><th scope="row" style="font-weight:300"><span data-l="es">Propuesta B (n=19)</span><span data-l="en">Proposal B (n=19)</span></th><td class="num">89.5%</td><td class="num">94.7%</td><td class="num">89.5%</td></tr>
+  </tbody>
+</table></div>
+<div class="stack-16">
+  <h3 class="mc-title"><span data-l="es">Percepción (escala Likert 1 a 5)</span><span data-l="en">Perception (Likert scale 1 to 5)</span></h3>
+  <div class="legend"><span><i class="a"></i><span data-l="es">Propuesta A</span><span data-l="en">Proposal A</span></span><span><i></i><span data-l="es">Propuesta B</span><span data-l="en">Proposal B</span></span></div>
+  <div class="likert"><div class="lk-row"><span><span data-l="es">Claridad tras la carga</span><span data-l="en">Clarity after upload</span></span><div class="lk-bars"><div class="bar a"><div class="track"><i style="width:calc((100% - 44px) * 4.8 / 5)"></i><b>4.8</b></div></div><div class="bar"><div class="track"><i style="width:calc((100% - 44px) * 4.5 / 5)"></i><b>4.5</b></div></div></div></div><div class="lk-row"><span><span data-l="es">Validación del archivo</span><span data-l="en">File validation</span></span><div class="lk-bars"><div class="bar a"><div class="track"><i style="width:calc((100% - 44px) * 4.9 / 5)"></i><b>4.9</b></div></div><div class="bar"><div class="track"><i style="width:calc((100% - 44px) * 4.2 / 5)"></i><b>4.2</b></div></div></div></div><div class="lk-row"><span><span data-l="es">Seguridad antes de entregar</span><span data-l="en">Confidence before submitting</span></span><div class="lk-bars"><div class="bar a"><div class="track"><i style="width:calc((100% - 44px) * 4.7 / 5)"></i><b>4.7</b></div></div><div class="bar"><div class="track"><i style="width:calc((100% - 44px) * 4.4 / 5)"></i><b>4.4</b></div></div></div></div><div class="lk-row"><span><span data-l="es">Claridad de las acciones</span><span data-l="en">Clarity of actions</span></span><div class="lk-bars"><div class="bar a"><div class="track"><i style="width:calc((100% - 44px) * 4.7 / 5)"></i><b>4.7</b></div></div><div class="bar"><div class="track"><i style="width:calc((100% - 44px) * 4.5 / 5)"></i><b>4.5</b></div></div></div></div></div>
+</div>
+<div class="box g16">
+  <h3 class="c-h4 accent"><span data-l="es">El dato que complicó la decisión</span><span data-l="en">The data point that complicated the decision</span></h3>
+  <div class="times"><div><b>6.2 s</b><p class="c-p"><span data-l="es">Propuesta B</span><span data-l="en">Proposal B</span></p></div><div><b class="a">10.7 s</b><p class="c-p"><span data-l="es">Propuesta A</span><span data-l="en">Proposal A</span></p></div></div>
+  <p class="c-p"><span data-l="es">Validar el archivo fue más rápido en B, porque el link de texto se reconocía antes que el ícono de ojo. Todos encontraron el ojo, pero tardaron más.</span><span data-l="en">Checking the file was faster in B, because the text link was recognized sooner than the eye icon. Everyone found the eye, but it took them longer.</span></p>
+</div>
+<div class="grid-2 g32">
+  <div class="box g12"><h3 class="tag"><span data-l="es">Lo que dijeron sobre A</span><span data-l="en">What they said about A</span></h3><p class="c-p"><span data-l="es">Valoraron poder previsualizar sin salir del flujo y la describieron como fácil e intuitiva.</span><span data-l="en">They valued previewing without leaving the flow and described it as easy and intuitive.</span></p></div>
+  <div class="box g12"><h3 class="tag"><span data-l="es">Lo que dijeron sobre B</span><span data-l="en">What they said about B</span></h3><p class="c-p"><span data-l="es">Varios mencionaron que descargar no es cómodo y que les generaba archivos duplicados.</span><span data-l="en">Several said downloading isn’t convenient and left them with duplicate files.</span></p></div>
+</div>
+</section>
+<section id="decision" class="stack">
+<div class="split split-56 split-top">
+  <div class="stack">
+    <h2 class="c-h2"><span data-l="es">Decisión de diseño</span><span data-l="en">Design decision</span></h2>
+    <span class="pill soft"><span data-l="es">Propuesta A · implementada en UTP+Class</span><span data-l="en">Proposal A · live in UTP+Class</span></span>
+    <p class="c-p"><span data-l="es">El ícono de ojo se eligió porque es una convención reconocida para “ver”, y permite revisar el archivo sin salir del flujo.</span><span data-l="en">The eye icon was chosen because it’s a widely recognized convention for “view”, and it lets students check the file without leaving the flow.</span></p>
+    <p class="c-p"><span data-l="es">Aunque B fue más rápida, la propuesta A ganó en éxito de tareas y en todas las métricas de percepción. Priorizamos confianza sobre velocidad: el problema de origen no era que entregar tomara tiempo, sino que el estudiante no estaba seguro de lo que entregaba.</span><span data-l="en">Although B was faster, proposal A won on task success and on every perception metric. We prioritized confidence over speed: the original problem wasn’t that submitting took time, but that students weren’t sure what they were submitting.</span></p>
+  </div>
+  <img class="keep-wide r8" src="../assets/img/casos/u-final.jpg" alt="Propuesta A implementada en mobile" width="461" height="361" loading="lazy">
+</div>
+</section>
+<section id="aprendizajes" class="stack">
+<h2 class="c-h2"><span data-l="es">Aprendizajes</span><span data-l="en">Learnings</span></h2>
+<div class="grid-3 g16"><div class="box g12"><h3 class="mc-title"><span data-l="es">Más rápido no siempre es mejor</span><span data-l="en">Faster isn’t always better</span></h3><p class="c-p"><span data-l="es">El tiempo favorecía a B, pero leído solo hubiera llevado a la decisión equivocada. Cruzar comportamiento, percepción y comentarios fue lo que dio la respuesta.</span><span data-l="en">Time favored B, but read on its own it would have led to the wrong decision. Combining behavior, perception and comments is what gave us the answer.</span></p></div><div class="box g12"><h3 class="mc-title"><span data-l="es">El correo no basta para reclutar</span><span data-l="en">Email isn’t enough to recruit</span></h3><p class="c-p"><span data-l="es">La guerrilla en sede completó la muestra y además nos dio contexto que el test remoto no captura.</span><span data-l="en">Guerrilla testing on campus completed the sample and gave us context remote testing doesn’t capture.</span></p></div><div class="box g12"><h3 class="mc-title"><span data-l="es">39 estudiantes marcan dirección</span><span data-l="en">39 students set a direction</span></h3><p class="c-p"><span data-l="es">Una muestra así orienta la decisión, pero no da certeza. Por eso el impacto se mide ya implementado.</span><span data-l="en">A sample like this guides the decision but doesn’t give certainty. That’s why impact is measured once it’s live.</span></p></div></div>
+</section>
+<section id="siguientes-pasos" class="stack">
+<h2 class="c-h2"><span data-l="es">Siguientes pasos</span><span data-l="en">Next steps</span></h2>
+<p class="c-p"><span data-l="es">La propuesta A ya está en producción. El siguiente paso es medir su impacto en la próxima encuesta de satisfacción, comparando contra el 42.5% de línea base, y seguir el uso del ícono de previsualización para entender cuántos estudiantes validan su archivo antes de entregar.</span><span data-l="en">Proposal A is already in production. The next step is to measure its impact in the next satisfaction survey against the 42.5% baseline, and track use of the preview icon to understand how many students check their file before submitting.</span></p>
+<p class="c-p"><span data-l="es">Una oportunidad abierta: acompañar el ícono de ojo con un texto “Ver” para que se identifique tan rápido como el link de la propuesta B.</span><span data-l="en">An open opportunity: pair the eye icon with a “View” label so it’s recognized as quickly as proposal B’s link.</span></p>
+</section>
+
+      <footer class="next-case">
+        <a href="../index.html#proyectos"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 18 4 12l6-6 1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"/></svg><span data-l="es">Todos los proyectos</span><span data-l="en">All projects</span></a>
+        <a class="nx" href="bizner.html"><small><span data-l="es">SIGUIENTE CASO</span><span data-l="en">NEXT CASE</span></small><span><span data-l="es">Rediseño del inventario de Bizner</span><span data-l="en">Redesigning Bizner’s inventory</span> <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M13.4793 10.8333H3.3335V9.16666H13.4793L8.81266 4.49999L10.0002 3.33333L16.6668 9.99999L10.0002 16.6667L8.81266 15.5L13.4793 10.8333Z"/></svg></span></a>
+      </footer>
+    </main>
+    <aside class="toc" aria-label="Saltar a la sección">
+      <p class="toc-label"><span data-l="es">Saltar a la sección</span><span data-l="en">Jump to section</span></p>
+      <ol><li><a href="#introduccion"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></a></li><li><a href="#problema"><span data-l="es">El problema</span><span data-l="en">The problem</span></a></li><li><a href="#objetivos"><span data-l="es">Objetivos</span><span data-l="en">Goals</span></a></li><li><a href="#investigacion"><span data-l="es">Investigación</span><span data-l="en">Research</span></a></li><li><a href="#propuestas"><span data-l="es">Propuestas</span><span data-l="en">Proposals</span></a></li><li><a href="#test-ab"><span data-l="es">Test A/B</span><span data-l="en">A/B test</span></a></li><li><a href="#resultados"><span data-l="es">Resultados</span><span data-l="en">Results</span></a></li><li><a href="#decision"><span data-l="es">Decisión</span><span data-l="en">Decision</span></a></li><li><a href="#aprendizajes"><span data-l="es">Aprendizajes</span><span data-l="en">Learnings</span></a></li></ol>
+    </aside>
+  </div>
+</div>
+<script src="../assets/js/case.js"></script>
+</body>
+</html>
