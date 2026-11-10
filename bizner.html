@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es" data-title-es="Rediseño de la sección Productos de Bizner · Jhared Marchena" data-title-en="Redesigning Bizner’s Products section · Jhared Marchena">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rediseño de la sección Productos de Bizner · Jhared Marchena</title>
+<meta name="description" content="Rediseño de la sección Productos de Bizner. Caso de estudio de Jhared Marchena, Product Designer.">
+<meta name="theme-color" content="#141413">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Lexend+Deca:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<div class="case-page">
+  <div class="case-orb o1" aria-hidden="true"></div>
+  <div class="case-orb o2" aria-hidden="true"></div>
+  <header class="case-top">
+    <a class="back" href="../index.html#proyectos"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 18 4 12l6-6 1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"/></svg><span data-l="es">Volver</span><span data-l="en">Back</span></a>
+    <button class="lang-pill" id="lang-toggle" type="button" aria-label="Cambiar idioma / Change language"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6M5 2v2M3.3 8c.9-.9 1.9-2.4 2.3-4M4 6c.5 1.2 1.6 2.3 3 3M9 14l2.5-6L14 14M9.8 12.2h3.4"/></svg><span id="lang-label">EN</span></button>
+  </header>
+  <nav class="toc-mobile" aria-label="Secciones"><a href="#introduccion"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></a><a href="#objetivos"><span data-l="es">Objetivos</span><span data-l="en">Goals</span></a><a href="#investigacion"><span data-l="es">Investigación</span><span data-l="en">Research</span></a><a href="#hallazgos"><span data-l="es">Hallazgos</span><span data-l="en">Findings</span></a><a href="#iteracion"><span data-l="es">Iteración</span><span data-l="en">Iteration</span></a><a href="#conclusion"><span data-l="es">Conclusión</span><span data-l="en">Conclusion</span></a></nav>
+  <div class="case-layout">
+    <main class="case-content">
+<section id="inicio" class="stack-32">
+<h1 class="c-h1"><span data-l="es">Rediseño de la sección Productos de Bizner: gestión de inventario para ferreterías</span><span data-l="en">Redesigning Bizner’s Products section: inventory management for hardware stores</span></h1>
+<dl class="c-meta"><div><dt><span data-l="es">CLIENTE</span><span data-l="en">CLIENT</span></dt><dd><span data-l="es">Cementos Pacasmayo</span><span data-l="en">Cementos Pacasmayo</span></dd></div><div><dt><span data-l="es">PRODUCTO</span><span data-l="en">PRODUCT</span></dt><dd><span data-l="es">Bizner (antes Gestiona)</span><span data-l="en">Bizner (formerly Gestiona)</span></dd></div><div><dt><span data-l="es">ALCANCE</span><span data-l="en">SCOPE</span></dt><dd><span data-l="es">Sección Productos</span><span data-l="en">Products section</span></dd></div><div><dt><span data-l="es">MÉTODO</span><span data-l="en">METHOD</span></dt><dd><span data-l="es">Discovery, benchmarking y user tests</span><span data-l="en">Discovery, benchmarking and user tests</span></dd></div></dl>
+<div class="c-cover"><img class="" src="../assets/img/casos/b-hero.jpg" alt="Ilustración del caso Bizner" width="789" height="529"></div>
+</section>
+<section id="introduccion" class="stack">
+<div class="split">
+  <div class="stack">
+    <h2 class="c-h2"><img src="../assets/img/casos/b-logo.png" alt="Isotipo de Bizner" width="57" height="57"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></h2>
+    <p class="c-p"><span data-l="es">Gestiona, ahora llamado Bizner tras un reciente cambio de marca, es un producto desarrollado por Cementos Pacasmayo diseñado para ayudar a los ferreteros a administrar y gestionar sus negocios de manera eficiente, además de ofrecerles beneficios comerciales.</span><span data-l="en">Gestiona, now called Bizner after a recent rebrand, is a product developed by Cementos Pacasmayo to help hardware store owners run and manage their businesses efficiently, while also offering them commercial benefits.</span></p>
+    <p class="c-p"><span data-l="es">En esta etapa de transformación hacia Bizner, el enfoque principal es generar un cambio sobre el producto que tenga mayor escalabilidad y apunte a una mayor madurez en experiencia de usuario. Durante este proceso, fui asignado a la sección de “Productos”, ubicada en el sidebar de Bizner.</span><span data-l="en">In this transition to Bizner, the main focus is to change the product so it scales better and reaches a higher level of user experience maturity. During this process, I was assigned to the “Products” section, located in Bizner’s sidebar.</span></p>
+  </div>
+  <img class="r8" src="../assets/img/casos/b-celular.jpg" alt="Pantalla de la app de Bizner en un celular" width="258" height="525" loading="lazy">
+</div>
+</section>
+<section class="stack">
+<h2 class="c-h2"><span data-l="es">Introducción a “Productos”</span><span data-l="en">About “Products”</span></h2>
+<h3 class="c-h3"><span data-l="es">¿Qué hace Productos?</span><span data-l="en">What does Products do?</span></h3>
+<p class="c-p"><span data-l="es">La sección Productos permite al ferretero visualizar sus productos registrados y llevar un control de su inventario. Esta sección ofrece como beneficio tarjetas informativas que muestran datos, como la cantidad de productos registrados, categorías y el valor del inventario, entre otros indicadores. Toda esta información se genera a partir del registro de los productos en la plataforma.</span><span data-l="en">The Products section lets the store owner see their registered products and keep track of their inventory. It also offers info cards showing data such as the number of registered products, categories and inventory value, among other indicators. All of this information comes from the products registered on the platform.</span></p>
+</section>
+<section id="objetivos" class="stack-32">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">A qué apuntamos</span><span data-l="en">What we aimed for</span></h2>
+  <p class="c-p"><span data-l="es">Bizner busca una madurez en la experiencia de usuario, lo que requirió abordar varios puntos clave:</span><span data-l="en">Bizner aims for a more mature user experience, which meant tackling several key points:</span></p>
+</div>
+<div class="grid-2"><div class="box soft"><p class="c-p"><span data-l="es">Integrar la nueva funcionalidad de carga rápida de productos.</span><span data-l="en">Integrate the new quick product upload feature.</span></p></div><div class="box soft"><p class="c-p"><span data-l="es">Someter al diseño actual a una evaluación heurística.</span><span data-l="en">Run a heuristic evaluation of the current design.</span></p></div><div class="box soft"><p class="c-p"><span data-l="es">Aplicar el sistema de diseño para integrar la nueva paleta de colores.</span><span data-l="en">Apply the design system to bring in the new color palette.</span></p></div><div class="box soft"><p class="c-p"><span data-l="es">Realizar los cambios sin perjudicar la experiencia actual.</span><span data-l="en">Make the changes without hurting the current experience.</span></p></div></div>
+</section>
+<section id="investigacion" class="stack-40">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">Investigación</span><span data-l="en">Research</span><span aria-hidden="true" style="font-size:44px;line-height:1">🔍</span></h2>
+  <p class="c-p"><span data-l="es">El proceso de investigación incluyó cuatro etapas fundamentales</span><span data-l="en">The research process included four key stages</span></p>
+</div>
+<div class="grid-2 g32"><article class="media-card"><div class="mc-media contain"><img class="" src="../assets/img/casos/b-etapa1.jpg" alt="Proto persona de un ferretero" width="462" height="260" loading="lazy"></div><div class="mc-body"><p class="tag"><span data-l="es">Etapa 01</span><span data-l="en">Stage 01</span></p><h3 class="mc-title"><span data-l="es">Discovery</span><span data-l="en">Discovery</span></h3><p class="c-p"><span data-l="es">Nos permitió empatizar con los usuarios y comprender sus necesidades.</span><span data-l="en">It helped us empathize with users and understand their needs.</span></p></div></article><article class="media-card"><div class="mc-media contain"><img class="" src="../assets/img/casos/b-etapa2.jpg" alt="Benchmarking de productos similares" width="462" height="260" loading="lazy"></div><div class="mc-body"><p class="tag"><span data-l="es">Etapa 02</span><span data-l="en">Stage 02</span></p><h3 class="mc-title"><span data-l="es">Benchmarking</span><span data-l="en">Benchmarking</span></h3><p class="c-p"><span data-l="es">Analizamos casos funcionales de productos similares para identificar buenas prácticas.</span><span data-l="en">We analyzed working examples from similar products to identify good practices.</span></p></div></article><article class="media-card"><div class="mc-media dark"><img class="" src="../assets/img/casos/b-etapa3.jpg" alt="Sesión de user test del producto actual" width="462" height="260" loading="lazy"></div><div class="mc-body"><p class="tag"><span data-l="es">Etapa 03</span><span data-l="en">Stage 03</span></p><h3 class="mc-title"><span data-l="es">User test sobre el producto actual</span><span data-l="en">User test of the current product</span></h3><p class="c-p"><span data-l="es">Evaluamos cómo los usuarios interactuaban con el producto en su actualidad.</span><span data-l="en">We assessed how users interacted with the product as it was.</span></p></div></article><article class="media-card"><div class="mc-media dark"><img class="" src="../assets/img/casos/b-etapa4.jpg" alt="Sesión de user test de la propuesta" width="462" height="260" loading="lazy"></div><div class="mc-body"><p class="tag"><span data-l="es">Etapa 04</span><span data-l="en">Stage 04</span></p><h3 class="mc-title"><span data-l="es">User test de la propuesta</span><span data-l="en">User test of the proposal</span></h3><p class="c-p"><span data-l="es">Probamos el diseño actualizado para validar mejoras y recibir retroalimentación.</span><span data-l="en">We tested the updated design to validate improvements and gather feedback.</span></p></div></article></div>
+</section>
+<section id="hallazgos" class="stack-40">
+<h2 class="c-h2"><span data-l="es">Hallazgos</span><span data-l="en">Findings</span></h2>
+<div class="box pad48">
+  <div class="stack-16">
+    <h3 class="c-h3"><span data-l="es">Resultados de test de producto actual</span><span data-l="en">Current product test results</span></h3>
+    <div class="row-pill"><span><span data-l="es">Test del producto actual</span><span data-l="en">Current product test</span></span><span class="pill"><span data-l="es">5 usuarios evaluados</span><span data-l="en">5 users tested</span></span></div>
+  </div>
+  <div class="stat-rows"><div class="stat-row"><span class="n">100%</span><p class="c-p"><span data-l="es">El 100% de los usuarios utiliza la función de carga manual, es decir, sube productos 1 x 1 en vez de usar la forma masiva, tanto en la versión web como en la aplicación de Bizner.</span><span data-l="en">100% of users rely on manual upload, adding products one by one instead of in bulk, both on the web version and in the Bizner app.</span></p></div><div class="stat-row"><span class="n">60%</span><p class="c-p"><span data-l="es">60% no comprende la finalidad del card informativo de categorías que se encuentra en “Productos”.</span><span data-l="en">60% don’t understand the purpose of the categories info card in “Products”.</span></p></div><div class="stat-row"><span class="n">80%</span><p class="c-p"><span data-l="es">Un 80% tiene dificultades para usar la carga masiva de productos por plantilla Excel en la web.</span><span data-l="en">80% struggle with bulk product upload through the Excel template on the web.</span></p></div><div class="stat-row"><span class="n">80%</span><p class="c-p"><span data-l="es">La aplicación móvil es preferida por el 80% de los usuarios frente a la versión web.</span><span data-l="en">80% of users prefer the mobile app over the web version.</span></p></div><div class="stat-row"><span class="n">100%</span><p class="c-p"><span data-l="es">Todos los usuarios presentan poca familiaridad al hacer el cambio entre “Facturador electrónico” y “Cuaderno digital”.</span><span data-l="en">All users are unfamiliar with switching between “Electronic invoicing” and “Digital notebook”.</span></p></div><div class="stat-row"><span class="n">80%</span><p class="c-p"><span data-l="es">A pesar de tener el menú desplegado y “Cuaderno digital” identificado, un 80% no sabe hacia dónde dirigirse.</span><span data-l="en">Even with the menu open and “Digital notebook” spotted, 80% don’t know where to go next.</span></p></div></div>
+  <img class="full-img" src="../assets/img/casos/b-test-actual.jpg" alt="Capturas del test del producto actual" width="862" height="443" loading="lazy">
+</div>
+<div class="box pad48">
+  <div class="stack-16">
+    <h3 class="c-h3"><span data-l="es">Resultados de test de propuesta</span><span data-l="en">Proposal test results</span></h3>
+    <div class="row-pill"><span><span data-l="es">Test de la propuesta</span><span data-l="en">Proposal test</span></span><span class="pill"><span data-l="es">5 usuarios evaluados</span><span data-l="en">5 users tested</span></span></div>
+  </div>
+  <div class="stat-rows roomy"><div class="stat-row"><span class="n">60%</span><p class="c-p"><span data-l="es">Un 60% de los usuarios continúa prefiriendo la carga manual sobre la opción de carga rápida.</span><span data-l="en">60% of users still prefer manual upload over the quick upload option.</span></p></div><div class="stat-row"><span class="n">80%</span><p class="c-p"><span data-l="es">El 80% considera que necesitará apoyo para adaptarse a los cambios en la interfaz.</span><span data-l="en">80% think they’ll need support to adapt to the interface changes.</span></p></div><div class="stat-row"><span class="n">100%</span><p class="c-p"><span data-l="es">Todos los usuarios encontraron confuso ser redirigidos a una pantalla completa para seleccionar la forma de registrar productos.</span><span data-l="en">All users found it confusing to be sent to a full screen to choose how to register products.</span></p></div><div class="stat-row"><span class="n">80%</span><p class="c-p"><span data-l="es">Un 80% completó las tareas de búsqueda sin dificultad.</span><span data-l="en">80% completed the search tasks without difficulty.</span></p></div><div class="stat-row"><span class="n">100%</span><p class="c-p"><span data-l="es">La nueva opción de carga rápida fue valorada por todos los usuarios.</span><span data-l="en">All users valued the new quick upload option.</span></p></div><div class="stat-row"><span class="n">100%</span><p class="c-p"><span data-l="es">Todos los usuarios pudieron completar la tarea de registrar stock.</span><span data-l="en">All users were able to complete the stock registration task.</span></p></div></div>
+  <div class="stack-32">
+    <img class="full-img" src="../assets/img/casos/b-test-prop1.jpg" alt="Pantallas de la propuesta evaluada" width="862" height="484" loading="lazy">
+    <img class="full-img" src="../assets/img/casos/b-test-prop2.jpg" alt="Pantallas de la propuesta evaluada" width="862" height="596" loading="lazy">
+  </div>
+</div>
+</section>
+<section id="iteracion" class="stack-40">
+<div class="stack">
+  <h2 class="c-h2"><span data-l="es">Iteración</span><span data-l="en">Iteration</span></h2>
+  <p class="c-p"><span data-l="es">Tras obtener los resultados, iniciamos una etapa de iteración en la que ajustamos los problemas detectados durante las pruebas, buscando mejorar los puntos más bajos del test.</span><span data-l="en">After getting the results, we started an iteration stage where we fixed the issues found during testing, focusing on the lowest-scoring points.</span></p>
+  <p class="c-p"><span data-l="es">Los invito a explorar el prototipo interactivo para conocer las mejoras implementadas.</span><span data-l="en">Feel free to explore the interactive prototype to see the improvements.</span></p>
+</div>
+<div class="btn-row">
+  <a class="btn btn-secondary" data-proto href="PROTO_MOBILE" target="_blank" rel="noopener"><span data-l="es">Ver prototipo mobile</span><span data-l="en">View mobile prototype</span></a>
+  <a class="btn btn-secondary" data-proto href="PROTO_DESKTOP" target="_blank" rel="noopener"><span data-l="es">Ver prototipo desktop</span><span data-l="en">View desktop prototype</span></a>
+</div>
+</section>
+<section id="conclusion" class="stack">
+<h2 class="c-h2"><span data-l="es">Conclusión</span><span data-l="en">Conclusion</span></h2>
+<p class="c-p"><span data-l="es">El tiempo limitado representó uno de los mayores retos en este proyecto. Si bien logramos entregar un resultado funcional y bien diseñado, no fue posible realizar un segundo test iterativo del prototipo. Por ello, considero fundamental realizar un seguimiento continuo del módulo para analizar cómo interactúan los usuarios con él.</span><span data-l="en">Limited time was one of the biggest challenges in this project. While we delivered a functional, well-designed result, we couldn’t run a second iterative test of the prototype. That’s why I think ongoing follow-up on the module is essential to see how users interact with it.</span></p>
+<p class="c-p"><span data-l="es">Además, dado que Bizner atraviesa cambios significativos como el rebranding, es esencial evaluar cómo las modificaciones en la lógica y la identidad visual impactan la experiencia del usuario. Este seguimiento permitirá identificar posibles puntos de fricción y ajustar el diseño para garantizar una transición fluida y efectiva.</span><span data-l="en">Also, since Bizner is going through major changes like the rebrand, it’s essential to evaluate how changes in logic and visual identity affect the user experience. This follow-up will help spot friction points and adjust the design for a smooth, effective transition.</span></p>
+</section>
+
+      <footer class="next-case">
+        <a href="../index.html#proyectos"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 18 4 12l6-6 1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z"/></svg><span data-l="es">Todos los proyectos</span><span data-l="en">All projects</span></a>
+        <a class="nx" href="perhusa.html"><small><span data-l="es">SIGUIENTE CASO</span><span data-l="en">NEXT CASE</span></small><span><span data-l="es">Diseño del Gestor Perhusa</span><span data-l="en">Designing Gestor Perhusa</span> <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M13.4793 10.8333H3.3335V9.16666H13.4793L8.81266 4.49999L10.0002 3.33333L16.6668 9.99999L10.0002 16.6667L8.81266 15.5L13.4793 10.8333Z"/></svg></span></a>
+      </footer>
+    </main>
+    <aside class="toc" aria-label="Saltar a la sección">
+      <p class="toc-label"><span data-l="es">Saltar a la sección</span><span data-l="en">Jump to section</span></p>
+      <ol><li><a href="#introduccion"><span data-l="es">Introducción</span><span data-l="en">Introduction</span></a></li><li><a href="#objetivos"><span data-l="es">Objetivos</span><span data-l="en">Goals</span></a></li><li><a href="#investigacion"><span data-l="es">Investigación</span><span data-l="en">Research</span></a></li><li><a href="#hallazgos"><span data-l="es">Hallazgos</span><span data-l="en">Findings</span></a></li><li><a href="#iteracion"><span data-l="es">Iteración</span><span data-l="en">Iteration</span></a></li><li><a href="#conclusion"><span data-l="es">Conclusión</span><span data-l="en">Conclusion</span></a></li></ol>
+    </aside>
+  </div>
+</div>
+<script src="../assets/js/case.js"></script>
+</body>
+</html>
