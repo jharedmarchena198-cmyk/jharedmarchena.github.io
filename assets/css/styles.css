@@ -128,6 +128,9 @@ main,.topbar{position:relative;z-index:1}
 .js .reveal.in{opacity:1;transform:none}
 .js .hero-sub.reveal{transition-delay:.08s}.js .hero-actions.reveal{transition-delay:.16s}
 
+/* Menú hamburguesa (solo móvil) */
+.menu-btn{display:none}
+
 /* Responsive */
 @media (max-width:1180px){
   .orbit{display:none}
@@ -157,17 +160,27 @@ main,.topbar{position:relative;z-index:1}
   .hero-inner{gap:32px}
 }
 @media (max-width:640px){
-  .topbar{gap:8px;padding:16px 12px 12px}
-  .nav-pill,.lang-pill{height:52px}
-  .nav-pill{padding:4px}
-  .nav-pill a{height:44px;min-width:0;padding:0 9px;font-size:13px}
-  .nav-pill a.nav-logo{display:none}
-  .lang-pill{padding:4px 14px;font-size:14px;gap:6px}
-  .lang-pill svg{width:14px;height:14px}
   .hero-actions .btn{flex:1 1 auto}
   .link-row{gap:24px}
   .lab{padding-bottom:300px}
 }
+/* Móvil: menú hamburguesa */
+@media (max-width:760px){
+  .topbar{justify-content:space-between;gap:8px;padding:16px 12px 12px}
+  .menu-btn{pointer-events:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:52px;height:52px;padding:0;background:var(--pill);border:1px solid var(--stroke);border-radius:97px;cursor:pointer;transition:border-color .2s}
+  .menu-btn:hover,.menu-btn[aria-expanded="true"]{border-color:var(--accent)}
+  .menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:#fff;transition:transform .25s,opacity .2s}
+  .menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-pill{position:absolute;top:80px;left:12px;right:12px;height:auto;flex-direction:column;align-items:stretch;padding:8px;border-radius:28px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s}
+  .nav-pill.open{opacity:1;visibility:visible;transform:none}
+  .nav-pill a{justify-content:flex-start;height:52px;min-width:0;padding:0 20px;font-size:18px}
+  .nav-pill a.nav-logo{display:none}
+  .lang-pill{height:52px;padding:4px 18px;font-size:14px;gap:6px}
+  .lang-pill svg{width:14px;height:14px}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .orbit-spin,.ring,.scan{animation:none}

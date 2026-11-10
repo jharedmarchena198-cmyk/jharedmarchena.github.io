@@ -59,6 +59,17 @@ var I18N = {
   document.getElementById('lang-toggle').addEventListener('click', function(){ apply(lang === 'es' ? 'en' : 'es'); });
   apply(lang);
 
+  // Menú hamburguesa (móvil)
+  var menuBtn = document.getElementById('menu-btn'), siteNav = document.getElementById('site-nav');
+  function setMenu(open){ if (!menuBtn || !siteNav) return; siteNav.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  if (menuBtn && siteNav) {
+    menuBtn.addEventListener('click', function(e){ e.stopPropagation(); setMenu(!siteNav.classList.contains('open')); });
+    siteNav.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('click', function(e){ if (!siteNav.contains(e.target)) setMenu(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+    window.addEventListener('resize', function(){ if (window.innerWidth > 760) setMenu(false); });
+  }
+
   // Enlaces reales
   document.querySelectorAll('[data-link="linkedin"]').forEach(function(a){ a.href = CONFIG.linkedin; });
   document.querySelectorAll('[data-link="cv"]').forEach(function(a){ a.href = CONFIG.cv; });
