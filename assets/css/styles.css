@@ -167,14 +167,14 @@ main,.topbar{position:relative;z-index:1}
   .hero{padding-top:150px}
   .projects{padding-top:88px}
   .about{padding-top:104px}
-  .lab{padding:24px 0 80px}
+  .lab{padding:104px 0 80px}
   .about-inner{flex-direction:column;align-items:flex-start;gap:56px}
   .avatar-wrap{width:min(300px,76vw);height:min(300px,76vw);margin-left:28px}
   .halo{left:-40px;top:-40px;width:calc(100% + 80px);height:calc(100% + 80px)}
   .ring{left:-20px;top:-20px;width:calc(100% + 40px);height:calc(100% + 40px)}
   .badge{left:auto;right:-24px;top:auto;bottom:6px}
   .lab .lead{max-width:none}
-  .lab-art{position:relative;top:auto;right:auto;width:min(300px,68vw);margin:0 16px 16px auto}
+  .lab-art{display:none}
   .lab-pile{width:auto;aspect-ratio:auto;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin:40px calc(var(--gut) * -1) 0;padding:56px var(--gut) 40px;--u:calc(280px / 409);scrollbar-width:none}
   .lab-pile::-webkit-scrollbar{display:none}
   .exp{position:relative;left:auto;top:auto;flex:0 0 280px;width:280px;transform:rotate(calc(var(--r) * .3));scroll-snap-align:center}
