@@ -84,24 +84,34 @@ var I18N = {
 
   // Laboratorio: humo azul al tocar el frasco
   var flask = document.querySelector('.flask'), smoke = document.querySelector('.smoke'), art = document.querySelector('.lab-art');
+  var lastPuff = 0, MAX_PUFFS = 40;
   if (flask && smoke) flask.addEventListener('click', function(){
+    var now = Date.now();
+    if (now - lastPuff < 450) return;            // evita la ráfaga de clics
+    lastPuff = now;
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var colors = ['rgba(40,90,255,.95)','rgba(70,130,255,.9)','rgba(25,70,220,.95)','rgba(110,160,255,.8)','rgba(55,110,255,.9)','rgba(95,100,115,.6)'];
-    var n = reduce ? 8 : 34;
+    var colors = ['40,90,255','70,130,255','25,70,220','110,160,255','55,110,255','95,100,115'];
+    var n = reduce ? 6 : 16;
+    // si ya hay mucho humo, quita el más viejo
+    var extra = smoke.children.length + n - MAX_PUFFS;
+    for (var k = 0; k < extra; k++) { if (smoke.firstChild) smoke.removeChild(smoke.firstChild); }
     art.classList.remove('wobble'); void art.offsetWidth; art.classList.add('wobble');
+    var frag = document.createDocumentFragment();
     for (var i = 0; i < n; i++) {
       var p = document.createElement('span'); p.className = 'puff';
-      var s = 60 + Math.random() * 90;
+      var c = colors[i % colors.length], s = 70 + Math.random() * 100;
       p.style.setProperty('--s', s + 'px');
-      p.style.setProperty('--pc', colors[i % colors.length]);
+      p.style.setProperty('--pc', 'rgba(' + c + ',.85)');
+      p.style.setProperty('--pc2', 'rgba(' + c + ',.35)');
       p.style.setProperty('--dx', (-50 + Math.random() * 120) + 'px');
       p.style.setProperty('--dy', -(140 + Math.random() * 200) + 'px');
       p.style.setProperty('--sc', (1.8 + Math.random() * 1.4).toFixed(2));
       p.style.setProperty('--d', (reduce ? 0.8 : 2.2 + Math.random() * 1.2).toFixed(2) + 's');
-      p.style.setProperty('--dl', (reduce ? 0 : i * 0.035).toFixed(2) + 's');
-      p.addEventListener('animationend', function(){ this.remove(); });
-      smoke.appendChild(p);
+      p.style.setProperty('--dl', (reduce ? 0 : i * 0.05).toFixed(2) + 's');
+      p.addEventListener('animationend', function(){ if (this.parentNode) this.parentNode.removeChild(this); });
+      frag.appendChild(p);
     }
+    smoke.appendChild(frag);
   });
 
   // Enlaces reales
