@@ -19,7 +19,7 @@ var I18N = {
     'about.p1':'Hola, soy Jhared. Diseñador peruano y curioso por naturaleza, enfocado en transformar sistemas complejos en productos claros y funcionales.',
     'about.p2':'Exploro cómo la inteligencia artificial puede potenciar el proceso de diseño, ayudando a explorar ideas y crear prototipos en etapas tempranas.',
     'cv':'Currículum',
-    'lab.title':'Laboratorio','lab.sub':'Experimentos, ideas locas y pequeños proyectos que no encajan en ningún otro lugar','lab.soon':'Próximamente...','lab.c1.pill':'Agentes','lab.c1.title':'Agente conversacional de feedback en la etapa de ideación','lab.flask':'Frasco: toca para ver qué pasa',
+    'lab.title':'Laboratorio','lab.sub':'Experimentos, ideas locas y pequeños proyectos que no encajan en ningún otro lugar.','lab.soon':'Próximamente...','lab.c1.pill':'Agentes','lab.c1.title':'Agente conversacional de feedback en la etapa de ideación','lab.flask':'Frasco: toca para ver qué pasa',
     'contact.title':'¿Tienes una idea o proyecto en mente? Conversemos.',
     'contact.copy':'Copiar correo electrónico','contact.copied':'¡Correo copiado!','contact.linkedin':'Envíame un mensaje directo a LinkedIn'
   },
@@ -36,7 +36,7 @@ var I18N = {
     'about.p1':'Hi, I’m Jhared. A Peruvian designer, curious by nature, focused on turning complex systems into clear, functional products.',
     'about.p2':'I explore how artificial intelligence can strengthen the design process, helping to explore ideas and build prototypes in the early stages.',
     'cv':'Résumé',
-    'lab.title':'Lab','lab.sub':'Experiments, wild ideas and small projects that don’t fit anywhere else','lab.soon':'Coming soon...','lab.c1.pill':'Agents','lab.c1.title':'Conversational feedback agent for the ideation stage','lab.flask':'Flask: tap to see what happens',
+    'lab.title':'Lab','lab.sub':'Experiments, wild ideas and small projects that don’t fit anywhere else.','lab.soon':'Coming soon...','lab.c1.pill':'Agents','lab.c1.title':'Conversational feedback agent for the ideation stage','lab.flask':'Flask: tap to see what happens',
     'contact.title':'Got an idea or project in mind? Let’s talk.',
     'contact.copy':'Copy email','contact.copied':'Email copied!','contact.linkedin':'Message me directly on LinkedIn'
   }
