@@ -104,7 +104,8 @@ main,.topbar{position:relative;z-index:1}
 /* Laboratorio */
 .lab{position:relative;padding:160px 0 107px}
 .lead{font-size:var(--p);color:var(--muted);margin-top:32px;max-width:1160px}
-.lab-art{position:absolute;z-index:3;top:59px;right:calc(var(--gut) - 102px);width:457px}
+.lab-art{position:absolute;z-index:3;top:59px;right:max(0px, calc(var(--gut) - 102px));width:457px}
+.lab .lead{max-width:min(682px, calc(100% + min(var(--gut), 102px) - 481px))}
 .lab-img{display:block;width:100%;height:auto;pointer-events:none}
 .flask{position:absolute;left:15%;top:17%;width:24%;height:37%;border:0;padding:0;background:none;border-radius:40%;cursor:pointer}
 .flask:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
@@ -172,6 +173,7 @@ main,.topbar{position:relative;z-index:1}
   .halo{left:-40px;top:-40px;width:calc(100% + 80px);height:calc(100% + 80px)}
   .ring{left:-20px;top:-20px;width:calc(100% + 40px);height:calc(100% + 40px)}
   .badge{left:auto;right:-24px;top:auto;bottom:6px}
+  .lab .lead{max-width:none}
   .lab-art{position:relative;top:auto;right:auto;width:min(300px,68vw);margin:0 16px 16px auto}
   .lab-pile{width:auto;aspect-ratio:auto;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin:40px calc(var(--gut) * -1) 0;padding:56px var(--gut) 40px;--u:calc(280px / 409);scrollbar-width:none}
   .lab-pile::-webkit-scrollbar{display:none}
